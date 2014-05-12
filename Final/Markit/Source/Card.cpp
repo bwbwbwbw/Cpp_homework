@@ -22,7 +22,7 @@ unsigned int Card::getBalance100() const
 Card& Card::updateBalance100(int addValue100)
 {
     if ((int)balance100 + addValue100 < 0) {
-        throw string("Insuffcient Gift Card balance");
+        throw string("Insufficient Gift Card balance");
     }
     
     balance100 += addValue100;
