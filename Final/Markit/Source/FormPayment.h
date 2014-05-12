@@ -107,10 +107,10 @@ private:
             
             data.pp.complete100 += pay * 100;
         } catch (string e) {
-            newtWinMessage("Markit Error", "OK", const_cast<char*>(e.c_str()));
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)e.c_str());
             return false;
         } catch (...) {
-            newtWinMessage("Markit Error", "OK", "Unknown error");
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"Unknown error");
             return false;
         }
         
@@ -142,10 +142,10 @@ private:
                 data.pp.complete100 += receive * 100;
             }
         } catch (string e) {
-            newtWinMessage("Markit Error", "OK", const_cast<char*>(e.c_str()));
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)e.c_str());
             return false;
         } catch (...) {
-            newtWinMessage("Markit Error", "OK", "Unknown error");
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"Unknown error");
             return false;
         }
         
@@ -173,14 +173,14 @@ private:
                 card.updateBalance100(-pay * 100);
                 data.pp.complete100 += pay * 100;
             } catch (string e) {
-                newtWinMessage("Markit Error", "OK", const_cast<char*>(e.c_str()));
+                newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)e.c_str());
                 return false;
             }
         } catch (string e) {
-            newtWinMessage("Markit Error", "OK", const_cast<char*>(e.c_str()));
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)e.c_str());
             return false;
         } catch (...) {
-            newtWinMessage("Markit Error", "OK", "Unknown error");
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"Unknown error");
             return false;
         }
         
@@ -228,7 +228,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Cash Payment");
+        newtGridWrappedWindow(grid, (char*)"Cash Payment");
         newtGridFree(grid, 1);
         
         bool complete = 0;
@@ -286,7 +286,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Bank Card Payment");
+        newtGridWrappedWindow(grid, (char*)"Bank Card Payment");
         newtGridFree(grid, 1);
         
         bool complete = 0;
@@ -345,7 +345,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Gift Card Payment");
+        newtGridWrappedWindow(grid, (char*)"Gift Card Payment");
         newtGridFree(grid, 1);
         
         bool complete = 0;
@@ -391,7 +391,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Payment");
+        newtGridWrappedWindow(grid, (char*)"Payment");
         newtGridFree(grid, 1);
         
         unsigned int price = (float)b.getTotalPrice100() / 100 * 100;

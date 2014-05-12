@@ -48,7 +48,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Check Out");
+        newtGridWrappedWindow(grid, (char*)"Check Out");
         newtGridFree(grid, 1);
         
         bool complete = false;

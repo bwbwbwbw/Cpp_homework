@@ -23,7 +23,7 @@ public:
             
             auto grid = newtCreateGrid(1, 2);
             
-            auto txtWelcome = newtTextbox(-1, -1, 49, 2, NULL);
+            auto txtWelcome = newtTextbox(-1, -1, 49, 2, 0);
             newtTextboxSetText(txtWelcome, "Welcome to Markit by Breezewish :-)"
                                "\n/* Use arrow keys to move and ENTER to select. */");
             newtGridSetField(grid, 0, 0, NEWT_GRID_COMPONENT, txtWelcome, 2, 1, 2, 0, 0, 0);
@@ -40,7 +40,7 @@ public:
             auto form = newtForm(NULL, NULL, 0);
             newtGridAddComponentsToForm(grid, form, 1);
             
-            newtGridWrappedWindow(grid, "Markit");
+            newtGridWrappedWindow(grid, (char*)"Markit");
             newtGridFree(grid, 1);
             
             auto answer = newtRunForm(form);

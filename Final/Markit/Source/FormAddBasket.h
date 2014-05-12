@@ -53,11 +53,11 @@ private:
                 string text = std::to_string(quantity) + " * " + p.getName();
                 newtListboxAppendEntry(basketList, text.c_str(), data);
             } catch (...) {
-                newtWinMessage("Markit Error", "OK", "Invalid quantity value.");
+                newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"Invalid quantity value.");
                 return false;
             }
         } catch (...) {
-            newtWinMessage("Markit Error", "OK", "Goods not found.");
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"Goods not found.");
             return false;
         }
         
@@ -110,12 +110,12 @@ public:
         newtGridSetField(fieldGrid, 1, 2, NEWT_GRID_COMPONENT, txtName, 1, 0, 0, 0, NEWT_ANCHOR_LEFT, 0);
         
         auto lblOrigin = newtLabel(-1, -1, "Origin:");
-        auto txtOrigin = newtTextbox(-1, -1, 50, 1, NULL);
+        auto txtOrigin = newtTextbox(-1, -1, 50, 1, 0);
         newtGridSetField(fieldGrid, 0, 3, NEWT_GRID_COMPONENT, lblOrigin, 0, 0, 0, 0, NEWT_ANCHOR_LEFT, 0);
         newtGridSetField(fieldGrid, 1, 3, NEWT_GRID_COMPONENT, txtOrigin, 1, 0, 0, 0, NEWT_ANCHOR_LEFT, 0);
         
         auto lblPrice = newtLabel(-1, -1, "Price each:");
-        auto txtPrice = newtTextbox(-1, -1, 50, 1, NULL);
+        auto txtPrice = newtTextbox(-1, -1, 50, 1, 0);
         newtGridSetField(fieldGrid, 0, 4, NEWT_GRID_COMPONENT, lblPrice, 0, 0, 0, 0, NEWT_ANCHOR_LEFT, 0);
         newtGridSetField(fieldGrid, 1, 4, NEWT_GRID_COMPONENT, txtPrice, 1, 0, 0, 0, NEWT_ANCHOR_LEFT, 0);
         
@@ -144,7 +144,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Add to Basket");
+        newtGridWrappedWindow(grid, (char*)"Add to Basket");
         newtGridFree(grid, 1);
         
         bool complete = false;

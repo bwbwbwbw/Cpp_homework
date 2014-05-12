@@ -18,7 +18,7 @@ class FormSave
 public:
     static void show()
     {
-        newtWinMessage("Markit", "OK", "Database saved successfully.");
+        newtWinMessage((char*)"Markit", (char*)"OK", (char*)"Database saved successfully.");
     }
     
     static void execute()

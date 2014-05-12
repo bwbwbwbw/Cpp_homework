@@ -39,7 +39,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Complete");
+        newtGridWrappedWindow(grid, (char*)"Complete");
         newtGridFree(grid, 1);
         
         newtRunForm(form);

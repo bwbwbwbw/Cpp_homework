@@ -83,7 +83,7 @@ private:
             //TODO: check whether update successfully
             u.updatePoint1000(accesser->getBonusPoint1000(entryIdData.basket));
         } catch(...) {
-            newtWinMessage("Markit Error", "OK", "VIPUser not found.");
+            newtWinMessage((char*)"Markit Error", (char*)"OK", (char*)"VIPUser not found.");
             return false;
         }
         
@@ -145,7 +145,7 @@ public:
         auto form = newtForm(NULL, NULL, 0);
         newtGridAddComponentsToForm(grid, form, 1);
         
-        newtGridWrappedWindow(grid, "Discount");
+        newtGridWrappedWindow(grid, (char*)"Discount");
         newtGridFree(grid, 1);
         
         bool complete = false;
